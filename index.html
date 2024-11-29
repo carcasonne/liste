@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PSEUDEPIGRAPH</title>
+
+  <meta name="description" content="A cabinet of curiosities of art, stories, and worlds.">
+
+  <link rel="shortcut icon" href="https://pseudepigraph.neocities.org/assets/favicon.png">
+  <link href="./style.css" rel="stylesheet" type="text/css" media="all">
+<style>
+body {
+	margin: 0px;
+}
+
+body {
+    background: url(./assets/bg_dark.png) repeat top;
+    background-size: 300px;
+    color: #faf4eb;
+    background-color: #1c1817;
+}
+
+
+h1 {
+	font-size: 3.51em;
+	letter-spacing:0.075em;
+	font-family: 'Moonlight';
+	text-transform: uppercase;
+  word-break: break-all;
+  margin-bottom: 10px;
+  text-align: center;
+ }
+
+p {
+	text-align: justify;
+	font-family: 'EB Garamond', serif;
+	font-size: 20px;
+	line-height: 1.4;
+	margin-top: 0.75em;
+	margin-bottom: 0.25em;
+ }
+
+.small {
+  font-family: 'EB Garamond', serif;
+  font-size: 17px;
+  line-height: 1;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  hyphens: auto;
+}
+
+.big-letter::first-letter {
+    font-family: 'Zainer Initials';
+    float: left;
+    font-size: 4em ;
+    margin: -0.01em 0.05em 0 0 ;
+    line-height: 0.67 ;
+    font-style: normal;
+    font-variant-caps: normal;
+}
+
+a {
+    color: #faf4eb;
+    text-decoration: none;
+}
+a:hover {
+    color: #faf4eb;
+    text-decoration: dotted;
+    transform: scale(1.1);
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: [col1-start] 40% [col1-end col2-start] auto [end];
+  grid-template-rows: [row1-start] 100vh [row1-end];
+}
+
+.passage {
+  max-width: 600px;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  grid-row-end: span 1;
+  padding: 15px 40px 15px 40px;
+  overflow: scroll;
+}
+
+@media only screen and (max-width: 650px) {
+   .passage {
+  padding: 15px 15px 15px 15px;
+ }
+}
+
+
+.passage {
+  color: #faf4eb;
+	background-color: #1c1817;
+  }
+
+hr {
+	background:url(https://pseudepigraph.neocities.org/assets/dividerwhite.png) no-repeat top center;
+    background-size: 100px;
+	height:42px;
+    width: 100px;
+	border:none;
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.toc-list, .toc-list ol {
+  list-style-type: none;
+  margin: 0 auto;
+}
+
+.toc-list {
+  padding: 0;
+  font-family: 'EB Garamond', serif;
+  font-size: 22px;
+}
+
+.toc-list ol {
+  padding-inline-start: 2ch;
+}
+
+.toc-list > li > a {
+  margin-block-start: 1em;
+}
+
+.toc-list li > a {
+    display: grid;
+    grid-template-columns: auto max-content;
+    align-items: end;
+}
+
+.toc-list li > a > .title {
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.toc-list li > a .leaders::after {
+    position: absolute;
+    padding-inline-start: .25ch;
+    content: " . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . "
+        ". . . . . . . . . . . . . . . . . . . . . . . ";
+    text-align: right;
+}
+
+.toc-list li > a > .page {
+    min-width: 2ch;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.entrance {
+  grid-column-start: 1;
+  grid-column-end: span 1;
+  position: relative;
+  text-align: center;
+}
+
+.link {
+	display: inline-block;
+	position: absolute;
+  width: fit-content;
+	height: fit-content;
+  bottom:11vh;
+  left: 14.5vw;
+}
+
+.link:hover {
+  transform: scale(1.06);
+  filter: brightness(1.5);
+  z-index: 95;
+}
+
+.dir {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: calc(0.5em + 3vw);
+	color: black;
+  line-height: 1;
+  font-style: normal;
+  font-family: 'EB Garamond', serif;
+  text-shadow: 1px 1px 2px grey, -1px -1px 2px grey, 0px 0px 3px grey;
+	z-index: 99;
+}
+
+.link:hover .dir, a:focus .dir {
+	opacity: 1;
+}
+
+@media only screen and (max-width: 1000px) {
+  .grid {
+  display: block;
+  padding: 0px;
+  grid-template-rows: [row1-start] 100% [row1-end];
+}
+
+.passage {
+  margin: 0 auto;
+}
+
+.entrance {
+  display: none
+}
+}
+
+</style>
+</head>
+<body>
+
+<main class="grid">
+
+<div class="entrance">
+<img src="./assets/entrance.png" style="max-width: 100%; max-height: 98vh; outline: red dashed 1px;" alt="" title="">
+<a href="..." class="link">
+<img src="./assets/hermit.png" style="height: 40vh; z-index:3;" alt="">
+<!-- <div class="dir">Enter...</div> -->
+</a>
+</div>
+
+<div class="passage">
+<picture>
+  <source srcset="./assets/danse_light.png 1x" media="(prefers-color-scheme:dark)">
+  <img src="./assets/danse_dark.png" style="max-width: 100%; margin: 0px auto;" alt="" title="">
+</picture>
+<br>
+<h1>Ønskeliste</h1>
+<br>
+
+<p class="big-letter">høre, du velsignede sjæl, du vandrer i decembers mørke! åbn dette HELLIGE skrin af ønsker, hvor i dets indre gemmer sig skatte og artifakter af den mest forunderlige art. det er på én gang en samling af jordiske begær, et relikvie sammensat af FROMME drømme, et manuskript indsvøbt i vintersolhvervets blege lys og prydet med advent-kransens gyldne skær. betragt disse folia efter behag, mens du vandrer gennem denne katalog af længsler.</p>
+
+<hr>
+
+<p>dette HELLIGE skrin af ønsker er endnu under konstruktion! nedenfor findes de gaver, som indtil videre er åbenbaret for beskuelse.</p>
+<br>
+
+<ol class="toc-list" role="list" style="max-width:350px">
+  <li>    <h4>Nøgleringe fra Ukrainekrigen</h4>   </li>
+  <li>
+    <a href="https://www.createdinukraine.com/products/aircraft-skin-keychain-of-fighter-bomber">
+      <span class="title">SU-34 kampfly<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>1</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.createdinukraine.com/products/keychain-from-a-downed-russian-ka-52">
+      <span class="title">Ka-52 angrebshelikopter<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>2</span>
+    </a>
+  </li>
+  <li>    <h4>Bøger</h4>   </li>
+  <li>
+    <a href="https://www.saxo.com/dk/the-timeless-way-of-building_christopher-alexander_hardback_9780195024029">
+      <span class="title">The Timeless Way of Building<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>3</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.amazon.co.uk/Deeds-Louis-Abbot-Suger-Saint-Denis/dp/0813207584">
+      <span class="title">The Deeds of Louis the Fat<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>4</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.saxo.com/dk/the-rise-of-theodore-roosevelt-theodore-rex-colonel-roosevelt_edmund-morris_hardback_9780812958638">
+      <span class="title">Edmund Morris's Theodore Roosevelt Trilogy<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>5</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.saxo.com/dk/personal-memoirs-of-us-grant_ulysses-s-grant_paperback_9781507827451">
+      <span class="title">Personal Memoirs of U.S. Grant<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>6</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.saxo.com/dk/two-lives-of-charlemagne_einhard_paperback_9780140455052">
+      <span class="title">Two Lives of Charlemagne<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>7</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.saxo.com/dk/the-thirty-years-war_cv-wedgwood_paperback_9781590171462">
+      <span class="title">The Thirty Years War<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>8</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.saxo.com/dk/alexander-of-macedon-356-323-bc_peter-green_paperback_9780520275867">
+      <span class="title">Alexander of Macedon, 356-323 B.C.<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>9</span>
+    </a>
+  </li>
+  <li>    <h4>Tøj</h4>   </li>
+  <li>
+    <a href="r">
+      <span class="title">Tilskud til en blazer<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>10</span>
+    </a>
+  </li>
+  <li>    <h4>Teknologi</h4>   </li>
+  <li>
+    <a href="https://www.pricerunner.dk/pl/96-3210582354/Forstaerkere-Modtagere/Fiio-K11-Hovedtelefonforstaerker-Sort-Sammenlign-Priser">
+      <span class="title">Fiio k11 DAC/AMP (sort)<span class="leaders" aria-hidden="true"></span></span>
+      <span class="page"><span class="visually-hidden">Page&nbsp;</span>11</span>
+    </a>
+  </li>
+</ol>
+
+<br><br><br><br>
+
+<div class="small" style="letter-spacing:0.08em;">
+  <span lang="fr">AN CCXXXII DE LA RÉPUBLIQUE.</span> (2024 CE.)
+  <br>
+  <br>
+  <span>denne kodex er baseret på et manuskript fra <a href="https://pseudepigraph.neocities.org/">pseudepigraph.neocities.org</a> (straight up yoinked that medieval drip)</span>
+</div>
+
+<br>
+
+  
+</div>
+
+
+
+</div>
+
+</main>
+
+
+
